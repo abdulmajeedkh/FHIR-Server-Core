@@ -1,0 +1,457 @@
+{
+  "resourceType": "Patient",
+  "unknownElement": {
+    "valued": {
+      "data": [
+        true,
+        null
+      ]
+    }
+  },
+  "id": "pat1-with-errors",
+  "meta": {
+    "lastUpdated": "not a valid instant"
+  },
+  "text": {
+    "resourceType": "Narrative",
+    "status": "generatedY",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Patient Donald DUCK @ Acme Healthcare, Inc. MR = 654321</p></div>"
+  },
+  "contained": [
+    {
+      "resourceType": "Patient",
+      "active": [
+        null,
+        true
+      ],
+      "_active": [
+        {
+          "value": true
+        },
+        null
+      ],
+      "id": "PrimitiveArrayContainsComplex"
+    },
+    {
+      "resourceType": "Patient",
+      "id": "ComplexArrayContainsPrimitive",
+      "name": [
+        {
+          "value": "John"
+        },
+        {
+          "family": "Doe"
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "active": [
+        null,
+        true
+      ],
+      "id": "MultiLevelArrayPrimitive"
+    },
+    {
+      "resourceType": "Patient",
+      "active": [
+        true,
+        false
+      ],
+      "id": "MultiLevelArrayPrimitiveNoNull"
+    },
+    {
+      "resourceType": "Patient",
+      "_active": [
+        null,
+        {
+          "versionId": "2"
+        }
+      ],
+      "id": "MultiLevelArrayWithComplex"
+    },
+    {
+      "resourceType": "Patient",
+      "active": [
+        null,
+        true
+      ],
+      "_active": [
+        {
+          "versionId": "2"
+        },
+        null
+      ],
+      "id": "MultiLevelArrayWithComplexNoNull"
+    },
+    {
+      "resourceType": "PatientX",
+      "id": "1"
+    },
+    {
+      "resourceType": "Meta",
+      "versionId": "1"
+    },
+    {
+      "resourceType": "4",
+      "id": "1"
+    },
+    {
+      "id": "1"
+    },
+    {
+      "resourceType": "Patient",
+      "active": true,
+      "deceasedString": "yesterday"
+    },
+    {
+      "resourceType": "Patient",
+      "active": false,
+      "_active": {
+        "url": "http://example.com",
+        "id": "duped"
+      },
+      "name": [
+        {
+          "family": "Doe"
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "name": [
+        {
+          "family": "Doe"
+        },
+        {
+          "family": "Doe2"
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "test": false,
+      "_test": {
+        "id": "duped",
+        "extension": [
+          {
+            "url": "http://example.com"
+          }
+        ]
+      },
+      "id": "pat1"
+    },
+    {
+      "resourceType": "Observation",
+      "id": "decimal",
+      "status": "final",
+      "code": {
+        "text": "Decimal Testing Observation"
+      },
+      "component": [
+        {
+          "code": {
+            "text": "Component"
+          },
+          "valueQuantity": {
+            "value": 1.0,
+            "unit": "g"
+          }
+        },
+        {
+          "code": {
+            "text": "Component"
+          },
+          "valueQuantity": {
+            "value": 1.00,
+            "unit": "g"
+          }
+        },
+        {
+          "code": {
+            "text": "Component"
+          },
+          "valueQuantity": {
+            "value": 1.0,
+            "unit": "g"
+          }
+        },
+        {
+          "code": {
+            "text": "Component"
+          },
+          "valueQuantity": {
+            "value": 0.00000000000000001,
+            "unit": "g"
+          }
+        },
+        {
+          "code": {
+            "text": "Component"
+          },
+          "valueQuantity": {
+            "value": 10000000000000000,
+            "unit": "g"
+          }
+        },
+        {
+          "code": {
+            "text": "Component"
+          },
+          "valueQuantity": {
+            "value": "1.00000000000000000e-24",
+            "unit": "g"
+          }
+        },
+        {
+          "code": {
+            "text": "Component"
+          },
+          "valueQuantity": {
+            "value": "-1.00000000000000000e245",
+            "unit": "g"
+          }
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "id": "pat1",
+      "name": [
+        {
+          "given": [
+            "Jane",
+            "John",
+            "Rita",
+            true
+          ],
+          "_given": [
+            null,
+            {
+              "id": "e1"
+            },
+            null,
+            {
+              "id": "e2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "resourceType": "Patient",
+      "id": "1",
+      "identifier": [
+        {
+          "id": true,
+          "system": "http://hl7.org/fhir/sid/us-ssn",
+          "value": "444222222"
+        }
+      ],
+      "active": true,
+      "name": [
+        {
+          "given": "This should be an array",
+          "mother": "this does not exist",
+          "id": "firstname",
+          "use": "official",
+          "family": "Everywoman"
+        },
+        {
+          "family": [
+            "error: array is unexpected here"
+          ],
+          "id": "anothername",
+          "use": "usual",
+          "given": [
+            "Eveline",
+            null
+          ],
+          "_given": [
+            null,
+            {
+              "id": "a1"
+            }
+          ]
+        }
+      ],
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "555-555-2003",
+          "rank": 1
+        }
+      ],
+      "gender": "female",
+      "birthDate": "1973-05-31",
+      "address": [
+        {
+          "_use": {
+            "incorrect": "should have been a simple string"
+          },
+          "line": [
+            "2222 Home Street",
+            null
+          ],
+          "_line": [
+            {
+              "id": "bla"
+            },
+            null
+          ]
+        },
+        {
+          "line": [
+            "Wodanstraat"
+          ]
+        }
+      ],
+      "managingOrganization": {
+        "reference": "Organization/hl7"
+      }
+    }
+  ],
+  "extension": [
+    {
+      "valueString": "try this"
+    }
+  ],
+  "identifier": [
+    {
+      "use": "usual",
+      "system": "urn:oid:0.1.2.3.4.5.6.7",
+      "value": "654321"
+    },
+    {
+      "use": "official",
+      "system": "urn:oid:9.0.1.2.3.4.5.6.7",
+      "value": "7654321"
+    },
+    {
+      "use": "official",
+      "system": "http://some.other/system",
+      "value": "11223344"
+    }
+  ],
+  "active": true,
+  "name": [
+    {
+      "use": "official",
+      "family": "Donald",
+      "given": [
+        "Duck",
+        null
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "555-555-2003",
+      "use": "work",
+      "rank": true
+    }
+  ],
+  "gender": "male",
+  "_gender": {
+    "extension": [
+      {
+        "_url": "http://example.org/StructureDefinition/extension-with-incorrect-url-prop",
+        "valueCode": "metrosexual"
+      },
+      {
+        "url": "http://example.org/StructureDefinition/extension-with-number-as-code",
+        "valueCode": 28
+      },
+      {
+        "url": "http://example.org/StructureDefinition/extension-without-type",
+        "valueDecimal": 28
+      },
+      {
+        "url": "http://example.org/StructureDefinition/extension-with-unknown-type",
+        "valueSuperDecimal": 28
+      },
+      {
+        "url": "http://example.org/StructureDefinition/extension-with-unknown-cplx-type",
+        "valueSuperCrap": {
+          "temperature": 38.9,
+          "unit": "celcius"
+        }
+      }
+    ]
+  },
+  "birthDate": "1974-12-25",
+  "_birthDate": {
+    "extension": [
+      {
+        "url": "http://hl7.org/fhir/StructureDefinition/patient-birthTime",
+        "valueDateTime": "1974-12-25T14:35:45-05:00"
+      }
+    ]
+  },
+  "deceasedBoolean": "false",
+  "multipleBirthInteger": 3.14,
+  "photo": [
+    {
+      "contentType": "image/gif",
+      "data": "ERROR!R0lGODlhEwARAPcAAAAAAAAA/+9aAO+1AP/WAP/eAP/eCP/eEP/eGP/nAP/nCP/nEP/nIf/nKf/nUv/nWv/vAP/vCP/vEP/vGP/vIf/vKf/vMf/vOf/vWv/vY//va//vjP/3c//3lP/3nP//tf//vf///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////yH5BAEAAAEALAAAAAATABEAAAi+AAMIDDCgYMGBCBMSvMCQ4QCFCQcwDBGCA4cLDyEGECDxAoAQHjxwyKhQAMeGIUOSJJjRpIAGDS5wCDly4AALFlYOgHlBwwOSNydM0AmzwYGjBi8IHWoTgQYORg8QIGDAwAKhESI8HIDgwQaRDI1WXXAhK9MBBzZ8/XDxQoUFZC9IiCBh6wEHGz6IbNuwQoSpWxEgyLCXL8O/gAnylNlW6AUEBRIL7Og3KwQIiCXb9HsZQoIEUzUjNEiaNMKAAAA7"
+    }
+  ],
+  "contact": [
+    {
+      "relationship": [
+        {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/ValueSet/patient-contact-relationship",
+              "code": "owner"
+            }
+          ]
+        }
+      ],
+      "organization": {
+        "reference": "Organization/1",
+        "display": "Walt Disney Corporation"
+      }
+    }
+  ],
+  "communication": [
+    {
+      "language": {
+        "coding": [
+          {
+            "code": "nl-nl"
+          }
+        ]
+      },
+      "preferred": true,
+      "_preferred": {
+        "extension": [
+          {
+            "url": "http://example.org/StructureDefinition/language-preference",
+            "valueCode": "in-writing"
+          }
+        ]
+      }
+    },
+    {
+      "language": {},
+      "preferred": true,
+      "_preferred": {
+        "extension": [
+          {
+            "url": "http://example.org/StructureDefinition/language-preference",
+            "valueCode": "oral"
+          }
+        ]
+      }
+    }
+  ],
+  "managingOrganization": {
+    "reference": "Organization/1",
+    "display": ""
+  },
+  "link": [
+    {}
+  ]
+}
